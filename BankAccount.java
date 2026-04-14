@@ -25,7 +25,7 @@ public class BankAccount {
 
         System.out.println("Your balance: " + account.getBalance());
         Scanner scanner = new Scanner(System.in);
-        
+
         boolean continueBanking = true;
 
         while (continueBanking) {
@@ -42,9 +42,12 @@ public class BankAccount {
                     System.out.println("How much are you depositing?");
                     double money = scanner.nextDouble(); 
                     account.deposit(money);
+                    System.out.println("Balance after deposit: " + account.getBalance());
+                    break;
                 case 4:
                     System.out.println("Thank you for banking with us!");
                     continueBanking = false;
+                    break;
             }
              
         }
