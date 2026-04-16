@@ -1,3 +1,4 @@
+package combank;
 import java.util.Scanner;
 
 public class BankAccount {
@@ -7,12 +8,22 @@ public class BankAccount {
         balance = initialBalance;
     }
 
-    public void deposit(double amount) {
-        balance = balance + amount;
+     public void deposit(double amount) {
+        if (amount > 0) {
+            balance = balance + amount;
+        } else {
+            System.out.println("Deposit amount must be greater than 0.");
+        }
     }
 
     public void withdraw(double amount) {
-        balance = balance - amount;
+        if (amount <= 0) {
+            System.out.println("Withdrawal amount must be greater than 0.");
+        } else if (amount > balance) {
+            System.out.println("Insufficient funds.");
+        } else {
+            balance = balance - amount;
+        }
     }
 
     public double getBalance() {
@@ -56,16 +67,12 @@ public class BankAccount {
                     System.out.println("Thank you for banking with us!");
                     continueBanking = false;
                     break;
+                default:
+                    System.out.println("Invalid option. Please choose 1, 2, 3, or 4.");
+                    break;
             }
              
         }
-        /* 
-        account.deposit(500.0);
-        System.out.println("Balance after deposit: " + account.getBalance());
-        
-        account.withdraw(200.0);
-        System.out.println("Balance after withdrawal: " + account.getBalance());
-        */
     }
      
 }
