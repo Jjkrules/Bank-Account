@@ -42,13 +42,15 @@ public class BankAccount {
                     System.out.println("How much are you depositing?");
                     double money = scanner.nextDouble(); 
                     account.deposit(money);
-                    System.out.println("Balance after deposit: " + account.getBalance());
+  
                     break;
                 case 2:
                     System.out.println("How much are you Withdrawing?");
                     double with = scanner.nextDouble(); 
                     account.withdraw(with);
-                    System.out.println("Balance after deposit: " + account.getBalance());
+                    break;
+                case 3:
+                    System.out.println("Balance: " + account.getBalance());
                     break;
                 case 4:
                     System.out.println("Thank you for banking with us!");
